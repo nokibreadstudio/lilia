@@ -63,6 +63,18 @@
 
 <body class="flex flex-col min-h-screen">
 
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#fffbf0] flex flex-col items-center justify-center space-y-8">
+        <button id="close-menu-button" class="absolute top-6 right-6 text-[#4f364b]">
+            <i class="ph ph-x text-4xl"></i>
+        </button>
+        <nav class="flex flex-col items-center space-y-6 text-2xl uppercase tracking-widest text-[#4f364b]">
+            <a href="index.html">home</a>
+            <a href="menu.html">menu</a>
+            <a href="order.html">order</a>
+            <a href="contact.html">contact</a>
+        </nav>
+    </div>
+
     <header class="sticky top-0 z-20 bg-[#fdfbf7]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
             <div class="flex items-center justify-between h-24">
@@ -75,25 +87,19 @@
 
                 <div class="flex items-center space-x-6">
                     <nav class="hidden lg:flex space-x-10 text-base uppercase font-normal tracking-widest">
-                        <a href="menu.html" 
-                        class="lowercase transition duration-200" 
-                        style="color: #4f364b;"
-                        onmouseover="this.style.color='#b07d54'" 
-                        onmouseout="this.style.color='#4f364b'">menu</a>
-                        <a href="order.html" 
-                        class="lowercase transition duration-200" 
-                        style="color: #4f364b;"
-                        onmouseover="this.style.color='#b07d54'" 
-                        onmouseout="this.style.color='#4f364b'">order</a>
-                        <a href="contact.html" 
-                        class="lowercase transition duration-200" 
-                        style="color: #4f364b;"
-                        onmouseover="this.style.color='#b07d54'" 
-                        onmouseout="this.style.color='#4f364b'">contact</a>
+                        <a href="menu.html" class="lowercase transition duration-200" style="color: #4f364b;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#4f364b'">menu</a>
+                        <a href="order.html" class="lowercase transition duration-200" style="color: #4f364b;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#4f364b'">order</a>
+                        <a href="contact.html" class="lowercase transition duration-200" style="color: #4f364b;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#4f364b'">contact</a>
                         <a href="https://instagram.com/liliayyc" target="_blank" rel="noopener noreferrer" class="text-[#a2543d] hover:opacity-80 transition flex items-center" aria-label="Instagram">
                             <i class="ph ph-instagram-logo text-2xl"></i>
                         </a>
                     </nav>
+                </div>
+
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-[#4f364b] p-2">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
                 </div>
 
             </div>
@@ -252,6 +258,18 @@
                 alert("Submission failed. Please check your access key.");
             }
         });
+    });
+    
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const closeBtn = document.getElementById('close-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
     });
 </script>
 
