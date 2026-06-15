@@ -62,17 +62,34 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 10;
         }
-</style>
-
     </style>
+
 </head>
 
 
 <body class="flex flex-col min-h-screen">
 
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#fffbf0] flex flex-col items-center justify-center space-y-8">
+        <button id="close-menu-button" class="absolute top-6 right-6 text-[#4f364b]">
+            <i class="ph ph-x text-4xl"></i>
+        </button>
+        <nav class="flex flex-col items-center space-y-6 text-2xl uppercase tracking-widest text-[#4f364b]">
+            <a href="index.html">home</a>
+            <a href="menu.html">menu</a>
+            <a href="order.html">order</a>
+            <a href="contact.html">contact</a>
+        </nav>
+    </div>
+
     <header class="sticky top-0 z-20 bg-[#fffbf0] pt-3 pb-4 md:pt-4 md:pb-5 transition duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex flex-col items-center justify-center">
             
+            <div class="absolute left-2 top-2 lg:hidden">
+                <button id="mobile-menu-button" class="text-[#4f364b] p-2">
+                    <i class="ph ph-list text-3xl"></i>
+                </button>
+            </div>
+                                
             <div class="w-full flex justify-center pb-3">
                 <a href="index.html" class="block h-16 md:h-20 flex items-center justify-center">
                     <img src="./imgs/LILIA_Logo_Terracotta.png" alt="Lilia" class="h-full w-auto object-contain">
@@ -81,41 +98,21 @@
 
             <div class="w-full flex justify-center pt-2">
                 <nav class="hidden lg:flex items-center justify-center space-x-12 text-base font-medium tracking-[0.25em]">
-                    
-                    <a href="menu.html" 
-                    class="uppercase transition duration-200" 
-                    style="color: #4f364b; font-family: 'EB Garamond', 'Adobe Garamond Pro', Garamond, serif;"
-                    onmouseover="this.style.color='#b07d54'" 
-                    onmouseout="this.style.color='#4f364b'">menu</a>
-                    
-                    <a href="order.html" 
-                    class="uppercase transition duration-200" 
-                    style="color: #4f364b; font-family: 'EB Garamond', 'Adobe Garamond Pro', Garamond, serif;"
-                    onmouseover="this.style.color='#b07d54'" 
-                    onmouseout="this.style.color='#4f364b'">order</a>
-                    
-                    <a href="contact.html" 
-                    class="uppercase transition duration-200" 
-                    style="color: #4f364b; font-family: 'EB Garamond', 'Adobe Garamond Pro', Garamond, serif;"
-                    onmouseover="this.style.color='#b07d54'" 
-                    onmouseout="this.style.color='#4f364b'">contact</a>
-                    
+                    <a href="menu.html" class="uppercase transition duration-200" style="color: #4f364b; font-family: 'EB Garamond', serif;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#4f364b'">menu</a>
+                    <a href="order.html" class="uppercase transition duration-200" style="color: #4f364b; font-family: 'EB Garamond', serif;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#4f364b'">order</a>
+                    <a href="contact.html" class="uppercase transition duration-200" style="color: #4f364b; font-family: 'EB Garamond', serif;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#4f364b'">contact</a>
                 </nav>
             </div>
 
             <div class="absolute right-6 top-1 md:right-12 md:top-2">
-                <a href="https://instagram.com/liliayyc" target="_blank" rel="noopener noreferrer" 
-                class="transition duration-200 flex items-center justify-center p-2" 
-                style="color: #a2543d;"
-                onmouseover="this.style.color='#b07d54'" 
-                onmouseout="this.style.color='#a2543d'"
-                aria-label="Instagram">
+                <a href="https://instagram.com/liliayyc" target="_blank" rel="noopener noreferrer" class="transition duration-200 flex items-center justify-center p-2" style="color: #a2543d;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#a2543d'" aria-label="Instagram">
                     <i class="ph ph-instagram-logo text-xl md:text-2xl"></i>
                 </a>
             </div>
-
         </div>
     </header>
+
+</body>
 
     <main id="app-content" class="flex-grow">
         
@@ -131,7 +128,7 @@
             </style>
 
             <div class="sticky top-0 bg-[#fffbf0] z-20">
-                <section class="w-full pt-16 pb-8 text-center bg-[#fffbf0]">
+                <section class="w-full pt-6 pb-8 text-center bg-[#fffbf0]">
                     <h1 class="text-4xl md:text-7xl font-normal tracking-[0.25em] leading-tight mx-auto" style="color: #4f364b;">
                         Our Menu
                     </h1>
@@ -208,13 +205,14 @@
     </footer>
 
 <script>
+    // --- 1. Category Switcher Logic ---
     function handleCategoryClick(clickedBtn, categoryId) {
-        // 1. Move the bar
         const activeBar = document.getElementById('active-bar');
-        activeBar.style.width = `${clickedBtn.offsetWidth}px`;
-        activeBar.style.left = `${clickedBtn.offsetLeft}px`;
+        if (activeBar) {
+            activeBar.style.width = `${clickedBtn.offsetWidth}px`;
+            activeBar.style.left = `${clickedBtn.offsetLeft}px`;
+        }
 
-        // 2. Reset and Activate Buttons
         document.querySelectorAll('.category-btn').forEach(btn => {
             btn.style.color = '#65615e';
             btn.style.fontWeight = '400';
@@ -222,12 +220,10 @@
         clickedBtn.style.color = '#a2543d';
         clickedBtn.style.fontWeight = '600';
 
-        // 3. Hide all content and show target
         document.querySelectorAll('.menu-content').forEach(c => c.classList.add('hidden'));
         const target = document.getElementById('content-' + categoryId);
         if (target) target.classList.remove('hidden');
 
-        // 4. Update Heading
         const heading = document.getElementById('dynamic-category-heading');
         const titles = {
             'bread': 'Bread',
@@ -237,14 +233,28 @@
             'sandwiches': 'Sandwiches',
             'drink': 'Drinks'
         };
-        if(heading) heading.innerText = titles[categoryId];
+        if(heading && titles[categoryId]) heading.innerText = titles[categoryId];
     }
 
-    // Set initial position on load
+    // --- 2. Combined Initialization ---
     window.addEventListener('DOMContentLoaded', () => {
+        // Init Category Switcher
         const firstBtn = document.querySelector('.category-btn');
-        if (firstBtn) {
-            handleCategoryClick(firstBtn, 'bread');
+        if (firstBtn) handleCategoryClick(firstBtn, 'bread');
+
+        // Init Mobile Menu (Now safe to select these elements)
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const closeBtn = document.getElementById('close-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu && closeBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         }
     });
 </script>
