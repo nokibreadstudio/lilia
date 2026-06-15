@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - LILIA</title>
+    <link rel="icon" type="image/png" href="./imgs/favicon.png?v=6">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+    
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    
+    <style>
+        /* Base styling */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Futura PT', 'Futura', sans-serif;
+            background-color: #fffbf0;
+            color: #2d2f31; 
+        }
+
+        /* Style for the logo (Monospace drafting aesthetic) */
+        .logo-font {
+            font-family: "Monotxt_IV25", "Monotxt", monospace;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            
+            -webkit-text-stroke: 1px #2d2f31; 
+            text-stroke: 1px #2d2f31;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-20 bg-[#fdfbf7]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <div class="flex items-center justify-between h-24">
+                
+                <div class="flex-grow flex justify-start">
+                    <a href="index.html" class="block h-14 md:h-16 flex items-center">
+                        <img src="./imgs/LILIA_Logo_Terracotta.png" alt="Lilia" class="h-full w-auto object-contain">
+                    </a>
+                </div>
+
+                <div class="flex items-center space-x-6">
+                    <nav class="hidden lg:flex space-x-10 text-base uppercase font-normal tracking-widest">
+                        <a href="menu.html" 
+                        class="lowercase transition duration-200" 
+                        style="color: #4f364b;"
+                        onmouseover="this.style.color='#b07d54'" 
+                        onmouseout="this.style.color='#4f364b'">menu</a>
+                        <a href="order.html" 
+                        class="lowercase transition duration-200" 
+                        style="color: #4f364b;"
+                        onmouseover="this.style.color='#b07d54'" 
+                        onmouseout="this.style.color='#4f364b'">order</a>
+                        <a href="contact.html" 
+                        class="lowercase transition duration-200" 
+                        style="color: #4f364b;"
+                        onmouseover="this.style.color='#b07d54'" 
+                        onmouseout="this.style.color='#4f364b'">contact</a>
+                        <a href="https://instagram.com/liliayyc" target="_blank" rel="noopener noreferrer" class="text-[#bd5a28] hover:opacity-80 transition flex items-center" aria-label="Instagram">
+                            <i class="ph ph-instagram-logo text-2xl"></i>
+                        </a>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col justify-center">
+        
+        <section class="w-full pt-32 pb-16 text-center">
+            <h1 class="normal-case text-5xl md:text-7xl font-normal tracking-[0.1em]" style="color: #4f364b;">Order Online</h1>
+        </section>
+
+        <section class="max-w-4xl w-full mx-auto px-6 pb-40">
+            <div class="bg-[#fdfbf7] p-16 rounded-lg shadow-sm border border-[#a7705c]/10 text-center">
+                <div class="space-y-4">
+                    <div class="flex justify-center text-[#a2543d]">
+                        <i class="ph ph-clock text-5xl"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-light tracking-widest uppercase" style="color: #a2543d;">Coming Soon!</h2>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="w-full py-12" style="background-color: #a2543d;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+                
+                <div class="text-xs space-y-1" style="color: #fffbf0;">
+                    <p class="font-medium uppercase tracking-wider">Visit Us</p>
+                    <p>429 16 Ave NE<br>Calgary, AB T2E 1K3</p>
+                </div>
+
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://instagram.com/liliayyc" target="_blank" aria-label="Instagram" 
+                        style="color: #d8a47f; transition: color 0.3s ease;" 
+                        onmouseover="this.style.color='#fffbf0'" 
+                        onmouseout="this.style.color='#d8a47f'">
+                            <i class="ph ph-instagram-logo text-3xl"></i>
+                        </a>
+                        <a href="mailto:liliathebakery@gmail.com" aria-label="Email" 
+                        style="color: #d8a47f; transition: color 0.3s ease;" 
+                        onmouseover="this.style.color='#fffbf0'" 
+                        onmouseout="this.style.color='#d8a47f'">
+                            <i class="ph ph-envelope text-3xl"></i>
+                        </a>
+                    </div>
+                    <div class="text-xs" style="color: #fffbf0;">
+                        © 2026 lilia bakery. all rights reserved.
+                    </div>
+                </div>
+
+                <div class="text-xs space-y-1 md:text-right" style="color: #fffbf0;">
+                    <p class="font-medium uppercase tracking-wider">Opening Hours</p>
+                    <p>Wed – Sun: 8am – 4pm<br>Mon – Tue: Closed</p>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+</body>
+</html>
