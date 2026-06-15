@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - LILIA</title>
+    <link rel="icon" type="image/png" href="./imgs/favicon.png?v=6">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+    
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    
+    <style>
+        /* Base styling */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Futura PT', 'Futura', sans-serif;
+            background-color: #fffbf0;
+            color: #2d2f31; 
+        }
+
+        /* Style for the logo (Monospace drafting aesthetic) */
+        .logo-font {
+            font-family: "Monotxt_IV25", "Monotxt", monospace;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            
+            -webkit-text-stroke: 1px #2d2f31; 
+            text-stroke: 1px #2d2f31;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+            -webkit-text-fill-color: #2d2f31; /* Keeps your text color */
+            -webkit-box-shadow: 0 0 0px 1000px #fdfbf7 inset; /* Sets the background */
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        /* Ensures the background stays your theme color during typing and autofill */
+        input, textarea {
+            background-color: transparent !important;
+        }
+        input:focus, textarea:focus {
+            background-color: #fdfbf7 !important;
+        }
+
+        /* Autofill override */
+        input:-webkit-autofill, textarea:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px #fdfbf7 inset !important;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-20 bg-[#fdfbf7]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <div class="flex items-center justify-between h-24">
+                
+                <div class="flex-grow flex justify-start">
+                    <a href="index.html" class="block h-14 md:h-16 flex items-center">
+                        <img src="./imgs/LILIA_Logo_Terracotta.png" alt="Lilia" class="h-full w-auto object-contain">
+                    </a>
+                </div>
+
+                <div class="flex items-center space-x-6">
+                    <nav class="hidden lg:flex space-x-10 text-base uppercase font-normal tracking-widest">
+                        <a href="menu.html" 
+                        class="lowercase transition duration-200" 
+                        style="color: #4f364b;"
+                        onmouseover="this.style.color='#b07d54'" 
+                        onmouseout="this.style.color='#4f364b'">menu</a>
+                        <a href="order.html" 
+                        class="lowercase transition duration-200" 
+                        style="color: #4f364b;"
+                        onmouseover="this.style.color='#b07d54'" 
+                        onmouseout="this.style.color='#4f364b'">order</a>
+                        <a href="contact.html" 
+                        class="lowercase transition duration-200" 
+                        style="color: #4f364b;"
+                        onmouseover="this.style.color='#b07d54'" 
+                        onmouseout="this.style.color='#4f364b'">contact</a>
+                        <a href="https://instagram.com/liliayyc" target="_blank" rel="noopener noreferrer" class="text-[#a2543d] hover:opacity-80 transition flex items-center" aria-label="Instagram">
+                            <i class="ph ph-instagram-logo text-2xl"></i>
+                        </a>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main id="app-content" class="flex-grow flex flex-col justify-center">
+        
+<section class="w-full py-20 lg:py-32 flex flex-col items-center justify-center">
+    <h1 class="normal-case text-5xl md:text-7xl font-normal tracking-[0.1em]" style="color: #4f364b;">Contact Us</h1>
+    
+    <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start pt-24 pb-12 px-4">
+        
+        <div class="space-y-8 w-full">
+            <form id="contact-form" class="space-y-8 w-full">
+                        <input type="hidden" name="access_key" value="a262be52-ccdc-466a-958a-7f95bc578811">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="first-name" class="block text-base tracking-wide mb-2 text-[#a2543d] font-medium">First Name <span class="font-normal">(required)</span></label>
+                                <input type="text" name="first_name" id="first-name" required class="w-full bg-transparent border-b border-[#a7705c] py-2 focus:outline-none focus:border-[#a2543d] px-2 transition-all">
+                            </div>
+                            <div>
+                                <label for="last-name" class="block text-base tracking-wide mb-2 text-[#a2543d] font-medium">Last Name <span class="font-normal">(required)</span></label>
+                                <input type="text" name="last_name" id="last-name" required class="w-full bg-transparent border-b border-[#a7705c] py-2 focus:outline-none focus:border-[#a2543d] px-2 transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-base tracking-wide mb-2 text-[#a2543d] font-medium">Email <span class="font-normal">(required)</span></label>
+                            <input type="email" name="email" id="email" required class="w-full bg-transparent border-b border-[#a7705c] py-2 focus:outline-none focus:border-[#a2543d] px-2 transition-all">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-base tracking-wide mb-2 text-[#a2543d] font-medium">Message <span class="font-normal">(required)</span></label>
+                            <textarea name="message" id="message" required rows="5" class="w-full bg-transparent border-b border-[#a7705c] py-2 focus:outline-none focus:border-[#a2543d] px-2 transition-all resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="text-base font-normal px-8 py-3 rounded-full border border-[#a2543d] text-[#a2543d] hover:bg-[#a2543d] hover:text-white transition duration-300">
+                            Send
+                        </button>
+                    </form>
+
+                    <div id="success-message" class="px-4 py-3 rounded text-sm hidden" style="background-color: #a2543d; color: #fffbf0;">
+                        Thank you! Your message has been sent. We'll be in touch soon.
+                    </div>
+                </div>
+        
+        <div class="md:pl-12 space-y-12 w-full">
+            <div>
+                <h2 class="text-2xl font-medium tracking-wide mb-4" style="color: #4f364b">Coming Soon!</h2>
+                <p class="text-lg" style="font-weight: 390; color: #4f364b;">429 16 Ave. NE, Calgary, AB T2E 1K3</p>
+                <p class="text-lg" style="font-weight: 390; color: #4f364b;">Tuesday - Saturday: 8am - 4pm</p>
+                <p class="text-lg" style="font-weight: 390; color: #4f364b;">
+                    Email: <a href="mailto:liliathebakery@gmail.com" 
+                            style="color: #4f364b; text-decoration: none; transition: text-decoration 0.2s ease;" 
+                            onmouseover="this.style.textDecoration='underline'" 
+                            onmouseout="this.style.textDecoration='none'">liliathebakery@gmail.com</a>
+                </p>
+            </div>
+            
+            <div>
+                <h2 class="text-2xl font-semibold tracking-wide mb-4" style="color: #4f364b">Follow Our Fresh Bakes!</h2>
+                <a href="https://instagram.com/liliayyc" 
+                   target="_blank" 
+                   class="flex items-center transition" 
+                   style="color: #a2543d; font-weight: 300;"
+                   onmouseover="this.style.color='#d4753e'" 
+                   onmouseout="this.style.color='#a2543d'">
+                    <i class="ph ph-instagram-logo text-3xl mr-3"></i>
+                    <span class="text-lg font-medium">@LILIAYYC</span>
+                </a>
+            </div>
+
+            <div class="w-full overflow-hidden rounded-lg shadow-sm border border-gray-100">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.9701726079083!2d-114.05374522363198!3d51.05834894379366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53716ff92a6c8e31%3A0x7d25e0c50d4f5592!2s429%2016%20Ave%20NE%2C%20Calgary%2C%20AB%20T2E%201K3!5e0!3m2!1sen!2sca!4v1686776882000!5m2!1sen!2sca" 
+                    width="100%" 
+                    height="320" 
+                    style="border:0; display:block; filter: grayscale(100%) contrast(125%) brightness(95%);" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+    </div>
+</section>
+    </main>
+
+     <footer class="w-full py-12" style="background-color: #a2543d;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+                
+                <div class="text-xs space-y-1" style="color: #fffbf0;">
+                    <p class="font-medium uppercase tracking-wider">Visit Us</p>
+                    <p>429 16 Ave NE<br>Calgary, AB T2E 1K3</p>
+                </div>
+
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://instagram.com/liliayyc" target="_blank" aria-label="Instagram" 
+                        style="color: #d8a47f; transition: color 0.3s ease;" 
+                        onmouseover="this.style.color='#fffbf0'" 
+                        onmouseout="this.style.color='#d8a47f'">
+                            <i class="ph ph-instagram-logo text-3xl"></i>
+                        </a>
+                        <a href="mailto:liliathebakery@gmail.com" aria-label="Email" 
+                        style="color: #d8a47f; transition: color 0.3s ease;" 
+                        onmouseover="this.style.color='#fffbf0'" 
+                        onmouseout="this.style.color='#d8a47f'">
+                            <i class="ph ph-envelope text-3xl"></i>
+                        </a>
+                    </div>
+                    <div class="text-xs" style="color: #fffbf0;">
+                        © 2026 lilia bakery. all rights reserved.
+                    </div>
+                </div>
+
+                <div class="text-xs space-y-1 md:text-right" style="color: #fffbf0;">
+                    <p class="font-medium uppercase tracking-wider">Opening Hours</p>
+                    <p>Wed – Sun: 8am – 4pm<br>Mon – Tue: Closed</p>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+<script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const json = JSON.stringify(Object.fromEntries(formData));
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json', 
+                'Accept': 'application/json' 
+            },
+            body: json
+        })
+        .then(response => {
+            if (response.status === 200) {
+                // Remove the hidden class to show the message
+                successMessage.classList.remove('hidden');
+                
+                // Optional: Clear the form fields after success
+                form.reset();
+            } else {
+                alert("Submission failed. Please check your access key.");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
