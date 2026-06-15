@@ -95,7 +95,19 @@
                     <i class="ph ph-instagram-logo text-xl md:text-2xl"></i>
                 </a>
             </div>
+            <button id="mobile-menu-button" class="lg:hidden text-[#4f364b] p-2 focus:outline-none">
+                <i class="ph ph-list text-3xl"></i>
+            </button>
 
+            <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#fffbf0] flex flex-col items-center justify-center space-y-8">
+                <button id="close-menu-button" class="absolute top-6 right-6 text-[#4f364b]">
+                    <i class="ph ph-x text-3xl"></i>
+                </button>
+                <a href="index.html">home</a>
+                <a href="menu.html" class="text-2xl uppercase" style="color: #4f364b; font-family: 'EB Garamond', serif;">Menu</a>
+                <a href="order.html" class="text-2xl uppercase" style="color: #4f364b; font-family: 'EB Garamond', serif;">Order</a>
+                <a href="contact.html" class="text-2xl uppercase" style="color: #4f364b; font-family: 'EB Garamond', serif;">Contact</a>
+            </div>
         </div>
     </header>
 
@@ -261,6 +273,18 @@
             
         </div>
     </footer>
+<script>
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const closeBtn = document.getElementById('close-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+    });
+</script>
 </body>
 </html>
