@@ -205,14 +205,22 @@
     </footer>
 
 <script>
-    // --- 1. Category Switcher Logic ---
     function handleCategoryClick(clickedBtn, categoryId) {
+        // 1. Position the active bar
         const activeBar = document.getElementById('active-bar');
         if (activeBar) {
             activeBar.style.width = `${clickedBtn.offsetWidth}px`;
             activeBar.style.left = `${clickedBtn.offsetLeft}px`;
         }
 
+        // 2. Scroll the button into view (The "Fix")
+        clickedBtn.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+        });
+
+        // 3. Update Styles
         document.querySelectorAll('.category-btn').forEach(btn => {
             btn.style.color = '#65615e';
             btn.style.fontWeight = '400';
@@ -220,46 +228,33 @@
         clickedBtn.style.color = '#a2543d';
         clickedBtn.style.fontWeight = '600';
 
+        // 4. Update Content
         document.querySelectorAll('.menu-content').forEach(c => c.classList.add('hidden'));
         const target = document.getElementById('content-' + categoryId);
         if (target) target.classList.remove('hidden');
 
         const heading = document.getElementById('dynamic-category-heading');
         const titles = {
-            'bread': 'Bread',
-            'viennoiserie': 'Viennoiserie',
-            'pastry': 'Pastry',
-            'dessert': 'Dessert',
-            'sandwiches': 'Sandwiches',
-            'drink': 'Drinks'
+            'bread': 'Bread', 'viennoiserie': 'Viennoiserie', 'pastry': 'Pastry',
+            'dessert': 'Dessert', 'sandwiches': 'Sandwiches', 'drink': 'Drinks'
         };
         if(heading && titles[categoryId]) heading.innerText = titles[categoryId];
     }
 
-    // --- 2. Combined Initialization ---
+    // --- Initialization ---
     window.addEventListener('DOMContentLoaded', () => {
-        // Init Category Switcher
         const firstBtn = document.querySelector('.category-btn');
         if (firstBtn) handleCategoryClick(firstBtn, 'bread');
 
-        // Init Mobile Menu (Now safe to select these elements)
+        // Mobile Menu Logic
         const menuBtn = document.getElementById('mobile-menu-button');
         const closeBtn = document.getElementById('close-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
         if (menuBtn && mobileMenu && closeBtn) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.remove('hidden');
-            });
-
-            closeBtn.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+            menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+            closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         }
-    });
-    window.addEventListener('resize', () => {
-    const activeBtn = document.querySelector('.category-btn[style*="color: #a2543d"]');
-    if (activeBtn) handleCategoryClick(activeBtn, 'bread'); // Re-trigger to snap bar to correct position
     });
 </script>
 
