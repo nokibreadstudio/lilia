@@ -26,7 +26,7 @@
         body {
             /* Standardized font stack for Futura */
             font-family: "Futura PT", Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #fffbf0;
+            background-color: #f7f4eb;
             color: #2d2f31;
         }
 
@@ -52,12 +52,24 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <header class="sticky top-0 z-20 bg-[#fffbf0] pt-3 pb-4 md:pt-4 md:pb-5 transition duration-200">
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#f7f4eb] flex flex-col items-center justify-center space-y-8">
+        <button id="close-menu-button" class="absolute top-6 right-6 text-[#a2543d]">
+            <i class="ph ph-x text-4xl"></i>
+        </button>
+        <nav class="flex flex-col items-center space-y-6 text-2xl uppercase tracking-widest text-[#a2543d]">
+            <a href="index.html">home</a>
+            <a href="menu.html">menu</a>
+            <a href="order.html">order</a>
+            <a href="contact.html">contact</a>
+        </nav>
+    </div>
+    
+    <header class="sticky top-0 z-20 bg-[#f7f4eb] pt-3 pb-4 md:pt-4 md:pb-5 transition duration-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex flex-col items-center justify-center">
             
             <div class="w-full flex justify-center pb-3">
                 <a href="index.html" class="block h-16 md:h-20 flex items-center justify-center">
-                    <img src="./imgs/LILIA_Logo_Terracotta.png" alt="Lilia" class="h-full w-auto object-contain">
+                    <img src="./imgs/LILIA_Logo_Oxblood.png" alt="Lilia" class="h-full w-auto object-contain">
                 </a>
             </div>
 
@@ -66,21 +78,21 @@
                     
                     <a href="menu.html" 
                     class="uppercase transition duration-200" 
-                    style="color: #4f364b; font-family: 'EB Garamond', 'Adobe Garamond Pro', Garamond, serif;"
+                    style="color: #a2543d; font-family: 'EB Garamond', 'Adobe Garamond Pro', Garamond, serif;"
                     onmouseover="this.style.color='#b07d54'" 
-                    onmouseout="this.style.color='#2d2f31'">menu</a>
+                    onmouseout="this.style.color='#a2543d'">menu</a>
                     
                     <a href="order.html" 
                     class="uppercase transition duration-200" 
-                    style="color: #4f364b; font-family: 'EB Garamond', 'Adobe Garamond Pro', Garamond, serif;"
+                    style="color: #a2543d; font-family: 'EB Garamond', 'Adobe Garamond Pro', Garamond, serif;"
                     onmouseover="this.style.color='#b07d54'" 
-                    onmouseout="this.style.color='#2d2f31'">order</a>
+                    onmouseout="this.style.color='#a2543d'">order</a>
                     
                     <a href="contact.html" 
                     class="uppercase transition duration-200" 
-                    style="color: #4f364b; font-family: 'EB Garamond', 'Adobe Garamond Pro', Garamond, serif;"
+                    style="color: #a2543d; font-family: 'EB Garamond', 'Adobe Garamond Pro', Garamond, serif;"
                     onmouseover="this.style.color='#b07d54'" 
-                    onmouseout="this.style.color='#2d2f31'">contact</a>
+                    onmouseout="this.style.color='#a2543d'">contact</a>
                     
                 </nav>
             </div>
@@ -95,19 +107,13 @@
                     <i class="ph ph-instagram-logo text-xl md:text-2xl"></i>
                 </a>
             </div>
-            <button id="mobile-menu-button" class="lg:hidden text-[#4f364b] p-2 focus:outline-none">
-                <i class="ph ph-list text-3xl"></i>
-            </button>
+            <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-[#a2543d] p-2">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
 
-            <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#fffbf0] flex flex-col items-center justify-center space-y-8">
-                <button id="close-menu-button" class="absolute top-6 right-6 text-[#4f364b]">
-                    <i class="ph ph-x text-3xl"></i>
-                </button>
-                <a href="index.html" class="text-2xl uppercase" style="color: #4f364b; font-family: 'EB Garamond', serif;">home</a>
-                <a href="menu.html" class="text-2xl uppercase" style="color: #4f364b; font-family: 'EB Garamond', serif;">Menu</a>
-                <a href="order.html" class="text-2xl uppercase" style="color: #4f364b; font-family: 'EB Garamond', serif;">Order</a>
-                <a href="contact.html" class="text-2xl uppercase" style="color: #4f364b; font-family: 'EB Garamond', serif;">Contact</a>
-            </div>
+
         </div>
     </header>
 
@@ -119,7 +125,7 @@
                 class="absolute inset-0 w-full h-full object-cover object-center transform scale-100 transition duration-700 opacity-50 z-0">
             
             <div class="relative z-10 text-center px-4 space-y-4">
-                <h1 class="text-3xl md:text-5xl font-normal tracking-[0.15em] uppercase" style="color: #4f364b;">
+                <h1 class="text-3xl md:text-5xl font-normal tracking-[0.15em] uppercase" style="color: #4a0000;">
                     Coming Soon!
                 </h1>
                 <p class="text-xl md:text-2xl font-normal tracking-[0.2em] lowercase" style="color: #a2543d;">
@@ -129,7 +135,7 @@
 
         </section>
 
-        <section class="w-full pt-16 pb-12 lg:pt-20 lg:pb-12 relative group bg-[#fffbf0]">
+        <section class="w-full pt-16 pb-12 lg:pt-20 lg:pb-12 relative group bg-[#f7f4eb]">
     
             <button onclick="scrollCarousel('left')" 
                     class="absolute left-6 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-black/70 hover:bg-black text-white flex items-center justify-center transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 shadow-lg cursor-pointer"
@@ -199,6 +205,17 @@
                         container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                     }
                 };
+                    const menuBtn = document.getElementById('mobile-menu-button');
+                    const closeBtn = document.getElementById('close-menu-button');
+                    const mobileMenu = document.getElementById('mobile-menu');
+
+                    menuBtn.addEventListener('click', () => {
+                        mobileMenu.classList.remove('hidden');
+                    });
+
+                    closeBtn.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
             </script>
 
         </section>
@@ -208,7 +225,7 @@
                 
                 <div class="w-full flex justify-center items-center">
                     <div class="w-full max-w-md overflow-hidden rounded-lg">
-                        <img src="./imgs/LILIA_Logo_flower_terracotta.png" alt="Visual Storytelling Asset" 
+                        <img src="./imgs/LILIA_Logo_flower_oxblood.png" alt="Visual Storytelling Asset" 
                             class="w-full h-auto object-contain block">
                     </div>
                 </div>
@@ -219,28 +236,28 @@
                         Welcome
                     </h2>
                     
-                    <p class="text-base leading-relaxed font-sans font-normal tracking-[0.01em] max-w-2xl pt-4" style="color: #4f364b; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-                        At Lilia, Scandinavian simplicity, Japanese traditional technique, and the nuanced flavors of Asian heritage exist in thoughtful conversation.
+                    <p class="text-base leading-relaxed font-sans font-normal tracking-[0.01em] max-w-2xl pt-4" style="color: #4a0000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+                        At Lilia, Canadian ingredients, Scandinavian simplicity, traditional Japanese technique, and the nuanced flavours of Asian heritage exist in thoughtful conversation.
                     </p>
 
-                    <p class="text-base leading-relaxed font-sans font-normal tracking-[0.01em] max-w-2xl pt-2" style="color: #4f364b; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-                        Founded in 2026, our work is defined by patience and restraint. We rely primarily on beautiful domestic ingredients and make all of our fillings from scratch to capture the honest character of our raw materials. This process cannot be rushed. Lilia's sourdough undergoes a slow, three-day natural fermentation to develop its deep flavor profile, while all of our bread, viennoiserie, classic Swedish cardamom buns, pastries, desserts, and rotating sandwiches are shaped entirely by hand.
+                    <p class="text-base leading-relaxed font-sans font-normal tracking-[0.01em] max-w-2xl pt-2" style="color: #4a0000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+                        Founded in 2026, our practice is defined by patience and restraint. We source mainly beautiful domestic ingredients and make our fillings from scratch to preserve the honest character of the raw materials. Nothing here is rushed. The sourdough undergoes a slow, three-day natural fermentation to develop its complex flavour, while all bread, viennoiserie, pastries, desserts, and rotating sandwiches are shaped by hand.
                     </p>
 
-                    <p class="text-base leading-relaxed font-sans font-normal tracking-[0.01em] max-w-2xl pt-2" style="color: #4f364b; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-                        Our small team works without shortcuts, preservatives, or dough conditioners. We simply trust the pacing of traditional long fermentation and allow the daily bake to steadily evolve.
+                    <p class="text-base leading-relaxed font-sans font-normal tracking-[0.01em] max-w-2xl pt-2" style="color: #4a0000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+                        Rejecting shortcuts, our small team works without preservatives or dough conditioners. By trusting the natural pacing of traditional long fermentation, we allow the daily bake to constantly evolve.
                     </p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="w-full py-12" style="background-color: #a2543d;">
+    <footer class="w-full py-12" style="background-color: #4a0000;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
                 
-                <div class="text-xs space-y-1" style="color: #fffbf0;">
+                <div class="text-xs space-y-1" style="color: #f7f4eb;">
                     <p class="font-medium uppercase tracking-wider">Visit Us</p>
                     <p>429 16 Ave NE<br>Calgary, AB T2E 1K3</p>
                 </div>
@@ -248,24 +265,24 @@
                 <div class="flex flex-col items-center space-y-4">
                     <div class="flex justify-center space-x-6">
                         <a href="https://instagram.com/liliayyc" target="_blank" aria-label="Instagram" 
-                        style="color: #d8a47f; transition: color 0.3s ease;" 
-                        onmouseover="this.style.color='#fffbf0'" 
-                        onmouseout="this.style.color='#d8a47f'">
+                        style="color: #b07d54; transition: color 0.3s ease;" 
+                        onmouseover="this.style.color='#f7f4eb'" 
+                        onmouseout="this.style.color='#b07d54'">
                             <i class="ph ph-instagram-logo text-3xl"></i>
                         </a>
                         <a href="mailto:liliathebakery@gmail.com" aria-label="Email" 
-                        style="color: #d8a47f; transition: color 0.3s ease;" 
-                        onmouseover="this.style.color='#fffbf0'" 
-                        onmouseout="this.style.color='#d8a47f'">
+                        style="color: #b07d54; transition: color 0.3s ease;" 
+                        onmouseover="this.style.color='#f7f4eb'" 
+                        onmouseout="this.style.color='#b07d54'">
                             <i class="ph ph-envelope text-3xl"></i>
                         </a>
                     </div>
-                    <div class="text-xs" style="color: #fffbf0;">
+                    <div class="text-xs" style="color: #f7f4eb;">
                         © 2026 lilia bakery. all rights reserved.
                     </div>
                 </div>
 
-                <div class="text-xs space-y-1 md:text-right" style="color: #fffbf0;">
+                <div class="text-xs space-y-1 md:text-right" style="color: #f7f4eb;">
                     <p class="font-medium uppercase tracking-wider">Opening Hours</p>
                     <p>(TBD)</p>
                 </div>
@@ -273,18 +290,6 @@
             
         </div>
     </footer>
-<script>
-    const menuBtn = document.getElementById('mobile-menu-button');
-    const closeBtn = document.getElementById('close-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
 
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('hidden');
-    });
-
-    closeBtn.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-    });
-</script>
 </body>
 </html>
