@@ -6,69 +6,22 @@
     <title>Menu - LILIA</title>
 
     <link rel="icon" type="image/png" href="./imgs/favicon.png?v=6">
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
-        
     <script src="https://unpkg.com/phosphor-icons"></script>
     
     <style>
-        /* Base styling */
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-
-        body {
-            font-family: 'Futura PT', 'Futura', sans-serif;
-            background-color: #f7f4eb;
-            color: #2d2f31; 
-        }
-
-        /* Style for the logo (Monospace drafting aesthetic) */
-        .logo-font {
-            font-family: "Monotxt_IV25", "Monotxt", monospace;
-            font-weight: 400;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            
-            -webkit-text-stroke: 1px #2d2f31; 
-            text-stroke: 1px #2d2f31;
-        }
-        .font-degular-mono-thin-italic {
-            font-family: "Degular Mono", "DegularMono-ThinItalic", monospace;
-            font-weight: 100; /* Forces the ultra-thin weight */
-            font-style: italic;
-        }
-        
-        /* 1. The Faded Background Track */
-        .menu-track-container {
-            position: relative;
-            height: 6px;
-            background-color: rgba(162, 84, 61, 0.2); /* Your light faded color */
-            width: 100%;
-        }
-
-        /* 2. The Solid Active Bar */
-        #active-bar {
-            position: absolute;
-            top: 0; /* Align to the top of the track container */
-            height: 6px; /* Exact same thickness */
-            background-color: #a2543d; /* Your solid color */
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 10;
-        }
+        html, body { height: 100%; margin: 0; }
+        body { font-family: 'Futura PT', sans-serif; background-color: #f7f4eb; color: #2d2f31; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
-
 </head>
-
 
 <body class="flex flex-col min-h-screen">
 
+    <!-- Mobile Navigation Overlay -->
     <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#f7f4eb] flex flex-col items-center justify-center space-y-8">
         <button id="close-menu-button" class="absolute top-6 right-6 text-[#a2543d]">
             <i class="ph ph-x text-4xl"></i>
@@ -81,182 +34,91 @@
         </nav>
     </div>
 
-    <header class="sticky top-0 z-20 bg-[#f7f4eb] pt-3 pb-4 md:pt-4 md:pb-5 transition duration-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex flex-col items-center justify-center">
-            
-            
-                                
+    <!-- Header -->
+    <header class="sticky top-0 z-20 bg-[#f7f4eb] pt-3 pb-4 transition duration-200">
+        <div class="max-w-7xl mx-auto px-4 relative flex flex-col items-center justify-center">
             <div class="w-full flex justify-center pb-3">
                 <a href="index.html" class="block h-16 md:h-20 flex items-center justify-center">
                     <img src="./imgs/LILIA_Logo_Oxblood.png" alt="Lilia" class="h-full w-auto object-contain">
                 </a>
             </div>
-
-            <div class="w-full flex justify-center pt-2">
-                <nav class="hidden lg:flex items-center justify-center space-x-12 text-base font-medium tracking-[0.25em]">
-                    <a href="menu.html" class="uppercase transition duration-200" style="color: #a2543d; font-family: 'EB Garamond', serif;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#a2543d'">menu</a>
-                    <a href="order.html" class="uppercase transition duration-200" style="color: #a2543d; font-family: 'EB Garamond', serif;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#a2543d'">order</a>
-                    <a href="contact.html" class="uppercase transition duration-200" style="color: #a2543d; font-family: 'EB Garamond', serif;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#a2543d'">contact</a>
-                </nav>
-            </div>
-
             <div class="absolute right-6 top-1 md:right-12 md:top-2">
-                <a href="https://instagram.com/liliayyc" target="_blank" rel="noopener noreferrer" class="transition duration-200 flex items-center justify-center p-2" style="color: #a2543d;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#a2543d'" aria-label="Instagram">
-                    <i class="ph ph-instagram-logo text-xl md:text-2xl"></i>
+                <a href="https://instagram.com/liliayyc" target="_blank" class="text-[#a2543d] hover:text-[#b07d54] p-2 transition">
+                    <i class="ph ph-instagram-logo text-2xl"></i>
                 </a>
             </div>
-            <div class="lg:hidden">
-                    <button id="mobile-menu-button" class="text-[#a2543d] p-2">
-                        <i class="ph ph-list text-3xl"></i>
-                    </button>
+            <div class="lg:hidden absolute left-6 top-1">
+                <button id="mobile-menu-button" class="text-[#a2543d] p-2">
+                    <i class="ph ph-list text-3xl"></i>
+                </button>
             </div>
         </div>
     </header>
 
-</body>
-
     <main id="app-content" class="flex-grow">
-        
+        <!-- Title Section -->
+        <section class="w-full pt-10 pb-6 text-center bg-[#f7f4eb]">
+            <h1 class="text-4xl md:text-7xl font-normal tracking-[0.25em] text-[#a2543d]">Our Menu</h1>
+        </section>
 
-        <section class="w-full pt-10 pb-20 text-center bg-[#f7f4eb]">
-            <style>
-                .no-scrollbar::-webkit-scrollbar { display: none; }
-                .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-                /* The sliding bar transition */
-                #active-bar {
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                }
-            </style>
-
-            <div class="sticky top-0 bg-[#f7f4eb] z-20">
-                <section class="w-full pt-6 pb-8 text-center bg-[#f7f4eb]">
-                    <h1 class="text-4xl md:text-7xl font-normal tracking-[0.25em] leading-tight mx-auto" style="color: #a2543d;">
-                        Our Menu
-                    </h1>
-                </section>
-
-               <section class="w-full bg-[#f7f4eb]">
-            <div class="menu-track-container">
-                <div id="active-bar"></div>
-            </div>
-
-            <div class="w-full overflow-x-auto no-scrollbar py-2">
-                <nav id="category-menu-nav" class="inline-block whitespace-nowrap px-4">
-                <button onclick="handleCategoryClick(this, 'bread')" class="category-btn inline-block px-6 text-sm font-semibold tracking-widest uppercase transition-colors duration-200" style="color: #a2543d;">BREAD</button>
-                <button onclick="handleCategoryClick(this, 'viennoiserie')" class="category-btn inline-block px-6 text-sm font-normal tracking-widest uppercase transition-colors duration-200" style="color: #65615e;">VIENNOISERIE</button>
-                <button onclick="handleCategoryClick(this, 'pastry')" class="category-btn inline-block px-6 text-sm font-normal tracking-widest uppercase transition-colors duration-200" style="color: #65615e;">PASTRY</button>
-                <button onclick="handleCategoryClick(this, 'dessert')" class="category-btn inline-block px-6 text-sm font-normal tracking-widest uppercase transition-colors duration-200" style="color: #65615e;">DESSERT</button>
-                <button onclick="handleCategoryClick(this, 'sandwiches')" class="category-btn inline-block px-6 text-sm font-normal tracking-widest uppercase transition-colors duration-200" style="color: #65615e;">SANDWICHES</button>
-                <button onclick="handleCategoryClick(this, 'drink')" class="category-btn inline-block px-6 text-sm font-normal tracking-widest uppercase transition-colors duration-200" style="color: #65615e;">DRINK</button>
+        <!-- Category Nav: Spanned far left to right -->
+        <section class="sticky top-0 bg-[#f7f4eb] z-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <nav id="category-menu-nav" class="flex justify-between items-center w-full">
+                    <button onclick="handleCategoryClick(this, 'bread')" class="category-btn text-sm font-semibold tracking-widest uppercase transition-colors" style="color: #a2543d;">BREAD</button>
+                    <button onclick="handleCategoryClick(this, 'viennoiserie')" class="category-btn text-sm font-normal tracking-widest uppercase transition-colors" style="color: #65615e;">VIENNOISERIE</button>
+                    <button onclick="handleCategoryClick(this, 'pastry')" class="category-btn text-sm font-normal tracking-widest uppercase transition-colors" style="color: #65615e;">PASTRY</button>
+                    <button onclick="handleCategoryClick(this, 'dessert')" class="category-btn text-sm font-normal tracking-widest uppercase transition-colors" style="color: #65615e;">DESSERT</button>
+                    <button onclick="handleCategoryClick(this, 'sandwiches')" class="category-btn text-sm font-normal tracking-widest uppercase transition-colors" style="color: #65615e;">SANDWICHES</button>
+                    <button onclick="handleCategoryClick(this, 'drink')" class="category-btn text-sm font-normal tracking-widest uppercase transition-colors" style="color: #65615e;">DRINK</button>
                 </nav>
             </div>
         </section>
-            
-
-        <section class="w-full pt-0 text-center space-y-3">
-            <h2 id="dynamic-category-heading" class="text-3xl md:text-4xl font-light lowercase tracking-[0.15em] text-center transition-all duration-300" style="color: #bd5a28;">
-                Freshly Baked Leavens
-            </h2>
-           
-        </section>
-
-            
-
 
     </main>
 
-    <footer class="w-full py-12" style="background-color: #4a0000;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
-                
-                <div class="text-xs space-y-1" style="color: #f7f4eb;">
-                    <p class="font-medium uppercase tracking-wider">Visit Us</p>
-                    <p>429 16 Ave NE<br>Calgary, AB T2E 1K3</p>
-                </div>
-
-                <div class="flex flex-col items-center space-y-4">
-                    <div class="flex justify-center space-x-6">
-                        <a href="https://instagram.com/liliayyc" target="_blank" aria-label="Instagram" 
-                        style="color: #b07d54; transition: color 0.3s ease;" 
-                        onmouseover="this.style.color='#f7f4eb'" 
-                        onmouseout="this.style.color='#b07d54'">
-                            <i class="ph ph-instagram-logo text-3xl"></i>
-                        </a>
-                        <a href="mailto:liliathebakery@gmail.com" aria-label="Email" 
-                        style="color: #b07d54; transition: color 0.3s ease;" 
-                        onmouseover="this.style.color='#f7f4eb'" 
-                        onmouseout="this.style.color='#b07d54'">
-                            <i class="ph ph-envelope text-3xl"></i>
-                        </a>
-                    </div>
-                    <div class="text-xs" style="color: #f7f4eb;">
-                        © 2026 lilia bakery. all rights reserved.
-                    </div>
-                </div>
-
-                <div class="text-xs space-y-1 md:text-right" style="color: #f7f4eb;">
-                    <p class="font-medium uppercase tracking-wider">Opening Hours</p>
-                    <p>(TBD)</p>
-                </div>
-            </div>
-            
-        </div>
-    </footer>
-
 <script>
     function handleCategoryClick(clickedBtn, categoryId) {
-        // 1. Position the active bar
-        const activeBar = document.getElementById('active-bar');
-        if (activeBar) {
-            activeBar.style.width = `${clickedBtn.offsetWidth}px`;
-            activeBar.style.left = `${clickedBtn.offsetLeft}px`;
-        }
-
-        // 2. Scroll the button into view (The "Fix")
-        clickedBtn.scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest',
-            inline: 'center'
+        // 1. Scroll the button into view
+        clickedBtn.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'nearest', 
+            inline: 'center' 
         });
 
-        // 3. Update Styles
+        // 2. Reset all buttons to default style
         document.querySelectorAll('.category-btn').forEach(btn => {
             btn.style.color = '#65615e';
             btn.style.fontWeight = '400';
         });
+        
+        // 3. Highlight the selected button
         clickedBtn.style.color = '#a2543d';
         clickedBtn.style.fontWeight = '600';
 
-        // 4. Update Content
+        // 4. Update visibility of menu content sections
         document.querySelectorAll('.menu-content').forEach(c => c.classList.add('hidden'));
         const target = document.getElementById('content-' + categoryId);
         if (target) target.classList.remove('hidden');
-
-        const heading = document.getElementById('dynamic-category-heading');
-        const titles = {
-            'bread': 'Bread', 'viennoiserie': 'Viennoiserie', 'pastry': 'Pastry',
-            'dessert': 'Dessert', 'sandwiches': 'Sandwiches', 'drink': 'Drinks'
-        };
-        if(heading && titles[categoryId]) heading.innerText = titles[categoryId];
     }
 
     // --- Initialization ---
-    window.addEventListener('DOMContentLoaded', () => {
-        const firstBtn = document.querySelector('.category-btn');
-        if (firstBtn) handleCategoryClick(firstBtn, 'bread');
-
+    document.addEventListener('DOMContentLoaded', () => {
         // Mobile Menu Logic
-        const menuBtn = document.getElementById('mobile-menu-button');
-        const closeBtn = document.getElementById('close-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        document.getElementById('mobile-menu-button')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu')?.classList.remove('hidden');
+        });
+        
+        document.getElementById('close-menu-button')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu')?.classList.add('hidden');
+        });
 
-        if (menuBtn && mobileMenu && closeBtn) {
-            menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
-            closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        // Optional: Trigger the first category (BREAD) on load so content is visible
+        const firstBtn = document.querySelector('.category-btn');
+        if (firstBtn) {
+            handleCategoryClick(firstBtn, 'bread');
         }
     });
 </script>
-
 </body>
 </html>
