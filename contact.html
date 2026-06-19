@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - LILIA</title>
+    <title>Order - LILIA</title>
     <link rel="icon" type="image/png" href="./imgs/favicon.png?v=6">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/phosphor-icons"></script>
     
@@ -21,7 +22,7 @@
 
         body {
             font-family: 'Futura PT', 'Futura', sans-serif;
-            background-color: #fffbf0;
+            background-color: #f7f4eb;
             color: #2d2f31; 
         }
 
@@ -35,39 +36,16 @@
             -webkit-text-stroke: 1px #2d2f31; 
             text-stroke: 1px #2d2f31;
         }
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover, 
-        input:-webkit-autofill:focus, 
-        textarea:-webkit-autofill,
-        textarea:-webkit-autofill:hover,
-        textarea:-webkit-autofill:focus {
-            -webkit-text-fill-color: #2d2f31; /* Keeps your text color */
-            -webkit-box-shadow: 0 0 0px 1000px #fdfbf7 inset; /* Sets the background */
-            transition: background-color 5000s ease-in-out 0s;
-        }
-
-        /* Ensures the background stays your theme color during typing and autofill */
-        input, textarea {
-            background-color: transparent !important;
-        }
-        input:focus, textarea:focus {
-            background-color: #fdfbf7 !important;
-        }
-
-        /* Autofill override */
-        input:-webkit-autofill, textarea:-webkit-autofill {
-            -webkit-box-shadow: 0 0 0px 1000px #fdfbf7 inset !important;
-        }
     </style>
 </head>
 
 <body class="flex flex-col min-h-screen">
 
-    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#fffbf0] flex flex-col items-center justify-center space-y-8">
-        <button id="close-menu-button" class="absolute top-6 right-6 text-[#4f364b]">
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#f7f4eb] flex flex-col items-center justify-center">
+        <button id="close-menu-button" class="absolute top-6 right-6 text-[#a2543d]">
             <i class="ph ph-x text-4xl"></i>
         </button>
-        <nav class="flex flex-col items-center space-y-6 text-2xl uppercase tracking-widest text-[#4f364b]">
+        <nav class="flex flex-col items-center space-y-8 text-2xl uppercase tracking-widest text-[#a2543d]">
             <a href="index.html">home</a>
             <a href="menu.html">menu</a>
             <a href="order.html">order</a>
@@ -81,27 +59,26 @@
                 
                 <div class="flex-grow flex justify-start">
                     <a href="index.html" class="block h-14 md:h-16 flex items-center">
-                        <img src="./imgs/LILIA_Logo_Terracotta.png" alt="Lilia" class="h-full w-auto object-contain">
+                        <img src="./imgs/LILIA_Logo_Oxblood.png" alt="Lilia" class="h-full w-auto object-contain">
                     </a>
                 </div>
 
                 <div class="flex items-center space-x-6">
-                    <nav class="hidden lg:flex space-x-10 text-base uppercase font-normal tracking-widest">
-                        <a href="menu.html" class="lowercase transition duration-200" style="color: #4f364b;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#4f364b'">menu</a>
-                        <a href="order.html" class="lowercase transition duration-200" style="color: #4f364b;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#4f364b'">order</a>
-                        <a href="contact.html" class="lowercase transition duration-200" style="color: #4f364b;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#4f364b'">contact</a>
+                    <nav class="hidden lg:flex space-x-10 text-base uppercase font-medium tracking-widest">
+                        <a href="menu.html" class="lowercase transition duration-200" style="color: #a2543d; font-family: 'EB Garamond', serif;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#a2543d'">menu</a>
+                        <a href="order.html" class="lowercase transition duration-200" style="color: #a2543d; font-family: 'EB Garamond', serif;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#a2543d'">order</a>
+                        <a href="contact.html" class="lowercase transition duration-200" style="color: #a2543d; font-family: 'EB Garamond', serif;" onmouseover="this.style.color='#b07d54'" onmouseout="this.style.color='#a2543d'">contact</a>
                         <a href="https://instagram.com/liliayyc" target="_blank" rel="noopener noreferrer" class="text-[#a2543d] hover:opacity-80 transition flex items-center" aria-label="Instagram">
                             <i class="ph ph-instagram-logo text-2xl"></i>
                         </a>
                     </nav>
-                </div>
 
-                <div class="lg:hidden">
-                    <button id="mobile-menu-button" class="text-[#4f364b] p-2">
-                        <i class="ph ph-list text-3xl"></i>
-                    </button>
+                    <div class="lg:hidden">
+                        <button id="mobile-menu-button" class="text-[#a2543d] p-2">
+                            <i class="ph ph-list text-3xl"></i>
+                        </button>
+                    </div>
                 </div>
-
             </div>
         </div>
     </header>
@@ -109,7 +86,7 @@
     <main id="app-content" class="flex-grow flex flex-col justify-center">
         
 <section class="w-full py-20 lg:py-32 flex flex-col items-center justify-center">
-    <h1 class="normal-case text-5xl md:text-7xl font-normal tracking-[0.1em]" style="color: #4f364b;">Contact Us</h1>
+    <h1 class="normal-case text-5xl md:text-7xl font-normal tracking-[0.1em]" style="color: #4a0000;">Contact Us</h1>
     
     <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start pt-24 pb-12 px-4">
         
@@ -143,31 +120,31 @@
                         </button>
                     </form>
 
-                    <div id="success-message" class="px-4 py-3 rounded text-sm hidden" style="background-color: #a2543d; color: #fffbf0;">
+                    <div id="success-message" class="px-4 py-3 rounded text-sm hidden" style="background-color: #a2543d; color: #f7f4eb;">
                         Thank you! Your message has been sent. We'll be in touch soon.
                     </div>
                 </div>
         
         <div class="md:pl-12 space-y-12 w-full">
             <div>
-                <h2 class="text-2xl font-medium tracking-wide mb-4" style="color: #4f364b">Coming Soon!</h2>
-                <p class="text-lg" style="font-weight: 390; color: #4f364b;">429 16 Ave. NE, Calgary, AB T2E 1K3</p>
-                <p class="text-lg" style="font-weight: 390; color: #4f364b;">Tuesday - Saturday: 8am - 4pm</p>
-                <p class="text-lg" style="font-weight: 390; color: #4f364b;">
+                <h2 class="text-2xl font-medium tracking-wide mb-4" style="color: #4a0000">Coming Soon!</h2>
+                <p class="text-lg" style="font-weight: 390; color: #4a0000;">429 16 Ave. NE, Calgary, AB T2E 1K3</p>
+                <p class="text-lg" style="font-weight: 390; color: #4a0000;">Tuesday - Saturday: 8am - 4pm</p>
+                <p class="text-lg" style="font-weight: 390; color: #4a0000;">
                     Email: <a href="mailto:liliathebakery@gmail.com" 
-                            style="color: #4f364b; text-decoration: none; transition: text-decoration 0.2s ease;" 
+                            style="color: #4a0000; text-decoration: none; transition: text-decoration 0.2s ease;" 
                             onmouseover="this.style.textDecoration='underline'" 
                             onmouseout="this.style.textDecoration='none'">liliathebakery@gmail.com</a>
                 </p>
             </div>
             
             <div>
-                <h2 class="text-2xl font-semibold tracking-wide mb-4" style="color: #4f364b">Follow Our Fresh Bakes!</h2>
+                <h2 class="text-2xl font-semibold tracking-wide mb-4" style="color: #4a0000">Follow Our Fresh Bakes!</h2>
                 <a href="https://instagram.com/liliayyc" 
                    target="_blank" 
                    class="flex items-center transition" 
                    style="color: #a2543d; font-weight: 300;"
-                   onmouseover="this.style.color='#d4753e'" 
+                   onmouseover="this.style.color='#b07d54'" 
                    onmouseout="this.style.color='#a2543d'">
                     <i class="ph ph-instagram-logo text-3xl mr-3"></i>
                     <span class="text-lg font-medium">@LILIAYYC</span>
@@ -191,12 +168,12 @@
 </section>
     </main>
 
-     <footer class="w-full py-12" style="background-color: #a2543d;">
+     <footer class="w-full py-12" style="background-color: #4a0000;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
                 
-                <div class="text-xs space-y-1" style="color: #fffbf0;">
+                <div class="text-xs space-y-1" style="color: #f7f4eb;">
                     <p class="font-medium uppercase tracking-wider">Visit Us</p>
                     <p>429 16 Ave NE<br>Calgary, AB T2E 1K3</p>
                 </div>
@@ -204,24 +181,24 @@
                 <div class="flex flex-col items-center space-y-4">
                     <div class="flex justify-center space-x-6">
                         <a href="https://instagram.com/liliayyc" target="_blank" aria-label="Instagram" 
-                        style="color: #d8a47f; transition: color 0.3s ease;" 
-                        onmouseover="this.style.color='#fffbf0'" 
-                        onmouseout="this.style.color='#d8a47f'">
+                        style="color: #b07d54; transition: color 0.3s ease;" 
+                        onmouseover="this.style.color='#f7f4eb'" 
+                        onmouseout="this.style.color='#b07d54'">
                             <i class="ph ph-instagram-logo text-3xl"></i>
                         </a>
                         <a href="mailto:liliathebakery@gmail.com" aria-label="Email" 
-                        style="color: #d8a47f; transition: color 0.3s ease;" 
-                        onmouseover="this.style.color='#fffbf0'" 
-                        onmouseout="this.style.color='#d8a47f'">
+                        style="color: #b07d54; transition: color 0.3s ease;" 
+                        onmouseover="this.style.color='#f7f4eb'" 
+                        onmouseout="this.style.color='#b07d54'">
                             <i class="ph ph-envelope text-3xl"></i>
                         </a>
                     </div>
-                    <div class="text-xs" style="color: #fffbf0;">
+                    <div class="text-xs" style="color: #f7f4eb;">
                         © 2026 lilia bakery. all rights reserved.
                     </div>
                 </div>
 
-                <div class="text-xs space-y-1 md:text-right" style="color: #fffbf0;">
+                <div class="text-xs space-y-1 md:text-right" style="color: #f7f4eb;">
                     <p class="font-medium uppercase tracking-wider">Opening Hours</p>
                     <p>(TBD)</p>
                 </div>
